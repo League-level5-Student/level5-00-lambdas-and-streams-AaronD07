@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class LambdaButtons implements ActionListener{
 	private JFrame window = new JFrame();
@@ -22,9 +23,12 @@ public class LambdaButtons implements ActionListener{
 		
 		//1. Call the addActionListener methods for each button. Use lambdas
 		//   to define to functionality of the buttons.
-		addNumbers.addActionListener(null):
-		randNumber.addActionListener(l);
-		tellAJoke.addActionListener(l);
+		addNumbers.addActionListener((event) -> {
+			System.out.println("Did the lambda work?");
+		});
+		randNumber.addActionListener(this);
+		tellAJoke.addActionListener(this);
+		
 		window.setVisible(true);
 		window.pack();
 	}
