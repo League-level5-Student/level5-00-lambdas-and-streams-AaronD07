@@ -3,6 +3,7 @@ package _00_JButtons_with_Lambdas;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,11 +25,20 @@ public class LambdaButtons implements ActionListener{
 		//1. Call the addActionListener methods for each button. Use lambdas
 		//   to define to functionality of the buttons.
 		addNumbers.addActionListener((event) -> {
-			System.out.println("Did the lambda work?");
+			String one = JOptionPane.showInputDialog("Enter a number");
+			String two = JOptionPane.showInputDialog("Enter another number");
+			int one1 = Integer.parseInt(one);
+			int one2 = Integer.parseInt(two);
+			System.out.println(one1 + one2);
 		});
-		randNumber.addActionListener(this);
-		tellAJoke.addActionListener(this);
+		randNumber.addActionListener((event)-> {
+		Random random = new Random();
+		System.out.println(random.nextInt(101));
+		});
 		
+		tellAJoke.addActionListener((event)-> {
+			System.out.println("hi");
+	});
 		window.setVisible(true);
 		window.pack();
 	}
@@ -36,12 +46,13 @@ public class LambdaButtons implements ActionListener{
 	public static void main(String[] args) {
 		new LambdaButtons();
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
+
 	
 	
 }
