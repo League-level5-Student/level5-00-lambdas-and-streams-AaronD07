@@ -13,11 +13,13 @@ public class StreamSearcher {
 	public long containsCount(String[] strArr, String strToCount) {
 		//2. Convert the String array to a stream
 		Stream<String> stream = Arrays.stream(strArr);
-		stream.for(number->{
+		stream.filter(strArr->{
+			
+		});
 		//3. Use the filter method with a lambda to extract all the String
 		//   elements that match the String parameter.
 		//4. Return the count of the filtered stream.
 		
-		return stream.length();
+		return stream.length();	
 	}
 }
